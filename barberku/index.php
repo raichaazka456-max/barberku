@@ -25,15 +25,36 @@ header_html('BarberKu');
   .pill:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.45)}
   .pill img{width:110px;height:110px;border:3px solid #fff}
   .pill span{font-size:28px;font-weight:600}
+
+  /* Tombol Daftar Booking */
+  .menu-booking{
+    display:block;
+    margin:10px auto 40px;
+    padding:14px 28px;
+    max-width:320px;
+    text-align:center;
+    border-radius:60px;
+    background:rgba(0,0,0,.65);
+    border:2px solid #fff;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    text-decoration:none;
+    transition:background .15s;
+  }
+  .menu-booking:hover{background:#000}
 </style>
 
 <div class="center">
   <h2 class="brand">A&amp;H HAIRSTUDIO</h2>
+
   <?php foreach ($barbers as $b): ?>
     <a class="pill" href="layanan.php?barber=<?= (int)$b['id_barber'] ?>">
       <img src="img/<?= e($b['foto']) ?>" alt="" onerror="this.style.visibility='hidden'">
       <span><?= e($b['nama']) ?></span>
     </a>
   <?php endforeach; ?>
+
+  <a class="menu-booking" href="daftar_booking.php">Lihat Daftar Booking</a>
 </div>
 <?php footer_html(); ?>
